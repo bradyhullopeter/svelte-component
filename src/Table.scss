@@ -1,0 +1,77 @@
+.table {
+  @import "@element/ui/modules/core";
+
+  table {
+    border-collapse: separate;
+    border-spacing: 10px;
+    width: 100%;
+    margin-bottom: 36px;
+
+    p {
+      margin-top: 0;
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    li {
+      font-size: 14px;
+      line-height: 18px;
+
+      &.combine {
+        font-weight: 800;
+      }
+    }
+
+    caption {
+      font-size: 14px;
+      line-height: 18px;
+      text-align: left;
+      margin-bottom: 36px;
+    }
+
+    thead th {
+      text-align: left;
+      position: relative;
+      border-bottom: 5px solid $color-neutrals-light-grey;
+      padding: 22px 0 22px 0;
+      font-weight: 700;
+      font-size: 14px;
+      vertical-align: top;
+
+      &:first-child {
+        border-left: none;
+      }
+
+      span.deemphasize {
+        font-weight: 400;
+      }
+    }
+
+    tbody td,
+    tbody th {
+      font-size: 14px;
+      padding: 22px 0 22px 0;
+      border-bottom: 1px solid $color-neutrals-light-grey;
+      position: relative;
+      vertical-align: top;
+      text-align: left;
+      font-weight: 400;
+
+      &:first-child {
+        border-left: none;
+      }
+
+      .label {
+        display: none;
+      }
+    }
+
+    tbody th {
+      font-weight: 700;
+
+      span {
+        font-weight: 400;
+      }
+    }
+  }
+}
