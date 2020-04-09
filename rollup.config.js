@@ -4,6 +4,7 @@ import pkg from "./package.json";
 import autoPreprocess from "svelte-preprocess";
 import { terser } from "rollup-plugin-terser";
 import size from "rollup-plugin-size";
+import gzipPlugin from "rollup-plugin-gzip";
 
 const name = pkg.name
   .replace(/^(@\S+\/)?(svelte-)?(\S+)/, "$3")
@@ -14,14 +15,15 @@ export default {
   input: "src/index.js",
   output: [
     { file: pkg.module, format: "es" },
-    { file: pkg.main, format: "umd", name },
+    { file: pkg.main, format: "umd", name }
   ],
   plugins: [
     svelte({
-      preprocess: autoPreprocess(),
+      preprocess: autoPreprocess()
     }),
     resolve(),
     terser(),
-    size(),
-  ],
+    gzipPlugin(),
+    size()
+  ]
 };
